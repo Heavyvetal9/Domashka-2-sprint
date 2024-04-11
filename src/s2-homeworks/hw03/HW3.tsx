@@ -19,36 +19,26 @@ import GreetingContainer from './GreetingContainer'
 
 // types
 export type UserType = {
-    _id: any // need to fix any
-    name: any // need to fix any
+    _id: string // need to fix any
+    name: string // need to fix any
 }
 
-export const pureAddUserCallback = (name: any, setUsers: any, users: any) => { // need to fix any
-    const user = { // need to fix
+export const pureAddUserCallback = (name: string, setUsers: React.Dispatch<React.SetStateAction<UserType[]>>, users: UserType[]) => {
+    const user = {
+        _id: v1(),
+        name: name,
     }
     setUsers([...users, user])
 }
 
 const HW3 = () => {
-    const [users, setUsers] = useState<any>([]) // need to fix any
+    const [users, setUsers] = useState<UserType[]>([]) // need to fix any
 
-    const addUserCallback = (name: any) => { // need to fix any
+    const addUserCallback = (name: string) => { // need to fix any
         pureAddUserCallback(name, setUsers, users)
     }
 
     return (
-        <div id={'hw3'}>
-            <div className={s2.hwTitle}>Homework #3</div>
-            {/*для автоматической проверки дз (не менять)*/}
 
-            <div className={s2.hw}>
-                <GreetingContainer
-                    users={users}
-                    addUserCallback={addUserCallback}
-                />
-            </div>
-        </div>
-    )
-}
-
+        <div id={'hw3'}> <div className={s2.hwTitle}>Homework #3</div> {/*для автоматической проверки дз (не менять)*/} <div className={s2.hw}> <GreetingContainer users={users} addUserCallback={addUserCallback} /> </div> </div> ) }
 export default HW3
