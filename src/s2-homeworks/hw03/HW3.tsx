@@ -23,7 +23,7 @@ export type UserType = {
     name: string // need to fix any
 }
 
-export const pureAddUserCallback = (name: string, setUsers: React.Dispatch<React.SetStateAction<UserType[]>>, users: UserType[]) => {
+export const pureAddUserCallback = (name: string, setUsers: (users:UserType[])=>void, users: UserType[]) => {
     const user = {
         _id: v1(),
         name: name,
