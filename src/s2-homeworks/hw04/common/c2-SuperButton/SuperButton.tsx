@@ -6,8 +6,28 @@ type DefaultButtonPropsType = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonE
     HTMLButtonElement>
 
 type SuperButtonPropsType = DefaultButtonPropsType & {
-    xType?: string
+    xType?: 'red' | 'secondary' | ''
 }
+
+// const SuperButton: React.FC<SuperButtonPropsType> = ({
+//                                                          xType,
+//                                                          className,
+//                                                          disabled,
+//                                                          ...restProps
+//                                                      }) => {
+//     let finalClassName = s.button;
+//
+//     if (disabled) {
+//         finalClassName += " " + s.disabled;
+//     } else if (xType === "red") {
+//         finalClassName += " " + s.red;
+//     } else if (xType === "secondary") {
+//         finalClassName += " " + s.secondary;
+//     }
+//
+//     if (className) {
+//         finalClassName += " " + className;
+//     }
 
 const SuperButton: React.FC<SuperButtonPropsType> = (
     {
@@ -17,12 +37,18 @@ const SuperButton: React.FC<SuperButtonPropsType> = (
         ...restProps // все остальные пропсы попадут в объект restProps, там же будет children
     }
 ) => {
-    const finalClassName = s.button
-        // + (disabled
-        //         ? ...
-        //         : xType === 'red'
-        //             ? ...
-        + (className ? ' ' + className : '') // задачка на смешивание классов
+    const defaultClassName = s.default
+
+    const finalClassName =
+        `
+            ${s.button}
+            ${disabled ? s.disabled : ''}
+            ${xType === 'red' ? s.red : ''}
+             ${xType === 'secondary' ? s.secondary : ''}
+            ${className ? className : defaultClassName}
+           
+        `
+    // задачка на смешивание классов
 
     return (
         <button
