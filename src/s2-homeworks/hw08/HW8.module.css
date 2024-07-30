@@ -1,4 +1,9 @@
 .item {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+
+    margin-left: 10px;
 }
 
 .item:last-of-type {
