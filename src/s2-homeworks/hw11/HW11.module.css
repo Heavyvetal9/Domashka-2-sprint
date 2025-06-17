@@ -17,12 +17,12 @@
 }
 
 .number {
-    min-width: 40px;
+    min-width: 56px;
     text-align: center;
     font-size: 18px;
     font-weight: bold;
     color: #333;
     padding: 5px 10px;
     background-color: #e0e0e0;
-    border-radius: 4px;
+    border-radius: 4px
 }
