@@ -22,78 +22,78 @@ html {
 
 }
 
-/* Глобальные переменные для тем */
-[data-theme='1'] {
-    --color: #000000;
-    --background: #FFFFFF;
-    --hover-bg: #F5F5F5;
-    --border-color: #D9D9D9;
-}
+/*!* Глобальные переменные для тем *!*/
+/*[data-theme='1'] {*/
+/*    --color: #000000;*/
+/*    --background: #FFFFFF;*/
+/*    --hover-bg: #F5F5F5;*/
+/*    --border-color: #D9D9D9;*/
+/*}*/
 
-[data-theme='2'] {
-    --color: #000000;
-    --background: #DDEEFF;
-    --hover-bg: #CCDDFF;
-    --border-color: #BBDDEE;
-}
+/*[data-theme='2'] {*/
+/*    --color: #000000;*/
+/*    --background: #DDEEFF;*/
+/*    --hover-bg: #CCDDFF;*/
+/*    --border-color: #BBDDEE;*/
+/*}*/
 
-[data-theme='3'] {
-    --color: #FFFFFF;
-    --background: #212A34;
-    --hover-bg: #3A4756;
-    --border-color: #4A5A6B;
-}
+/*[data-theme='3'] {*/
+/*    --color: #FFFFFF;*/
+/*    --background: #212A34;*/
+/*    --hover-bg: #3A4756;*/
+/*    --border-color: #4A5A6B;*/
+/*}*/
 
-/* Базовые стили */
-html {
-    background-color: var(--background);
-    color: var(--color);
-    transition: background-color 0.3s, color 0.3s;
-}
+/*!* Базовые стили *!*/
+/*html {*/
+/*    background-color: var(--background);*/
+/*    color: var(--color);*/
+/*    transition: background-color 0.3s, color 0.3s;*/
+/*}*/
 
-/* Стили для компонента HW12 */
-#hw12 {
-    padding: 20px;
-}
+/*!* Стили для компонента HW12 *!*/
+/*#hw12 {*/
+/*    padding: 20px;*/
+/*}*/
 
-#hw12-text {
-    margin-bottom: 20px;
-}
+/*#hw12-text {*/
+/*    margin-bottom: 20px;*/
+/*}*/
 
-/* Стили для селекта */
-.select {
-    min-width: 200px;
-    padding: 8px 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    background-color: var(--background);
-    color: var(--color);
-    font-size: 16px;
-    cursor: pointer;
-    outline: none;
-    transition: all 0.3s;
-}
+/*!* Стили для селекта *!*/
+/*.select {*/
+/*    min-width: 200px;*/
+/*    padding: 8px 12px;*/
+/*    border: 1px solid var(--border-color);*/
+/*    border-radius: 4px;*/
+/*    background-color: var(--background);*/
+/*    color: var(--color);*/
+/*    font-size: 16px;*/
+/*    cursor: pointer;*/
+/*    outline: none;*/
+/*    transition: all 0.3s;*/
+/*}*/
 
-.select:hover {
-    background-color: var(--hover-bg);
-}
+/*.select:hover {*/
+/*    background-color: var(--hover-bg);*/
+/*}*/
 
-.select:focus {
-    border-color: var(--color);
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
-}
+/*.select:focus {*/
+/*    border-color: var(--color);*/
+/*    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);*/
+/*}*/
 
-/* Стили для выпадающего списка (если нужно) */
-.select option {
-    padding: 8px;
-    background-color: var(--background);
-    color: var(--color);
-}
+/*!* Стили для выпадающего списка (если нужно) *!*/
+/*.select option {*/
+/*    padding: 8px;*/
+/*    background-color: var(--background);*/
+/*    color: var(--color);*/
+/*}*/
 
-.select option:hover {
-    background-color: var(--hover-bg);
-}
+/*.select option:hover {*/
+/*    background-color: var(--hover-bg);*/
+/*}*/
 
-html:not([data-theme]) {
-    background-color: rgba(0, 0, 0, 0) !important;
-}
+/*html:not([data-theme]) {*/
+/*    background-color: rgba(0, 0, 0, 0) !important;*/
+/*}*/
