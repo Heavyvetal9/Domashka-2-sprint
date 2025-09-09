@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Domashka-2-sprint/static/css/main.7bfd640b.css",
-    "main.js": "/Domashka-2-sprint/static/js/main.429fbf18.js",
+    "main.js": "/Domashka-2-sprint/static/js/main.fa199419.js",
     "static/js/787.66cb4309.chunk.js": "/Domashka-2-sprint/static/js/787.66cb4309.chunk.js",
     "static/media/avatar.png": "/Domashka-2-sprint/static/media/avatar.d947cb9d0d13765666b6.png",
     "static/media/200.svg": "/Domashka-2-sprint/static/media/200.2b4de1542921864a6ecb8c3301ea4670.svg",
@@ -15,11 +15,11 @@
     "index.html": "/Domashka-2-sprint/index.html",
     "static/media/burger.svg": "/Domashka-2-sprint/static/media/burger.e4e6b98e4ee0b2dfcd76d02a9eed2e34.svg",
     "main.7bfd640b.css.map": "/Domashka-2-sprint/static/css/main.7bfd640b.css.map",
-    "main.429fbf18.js.map": "/Domashka-2-sprint/static/js/main.429fbf18.js.map",
+    "main.fa199419.js.map": "/Domashka-2-sprint/static/js/main.fa199419.js.map",
     "787.66cb4309.chunk.js.map": "/Domashka-2-sprint/static/js/787.66cb4309.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7bfd640b.css",
-    "static/js/main.429fbf18.js"
+    "static/js/main.fa199419.js"
   ]
 }
