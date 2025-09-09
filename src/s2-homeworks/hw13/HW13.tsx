@@ -13,7 +13,7 @@ const HW13 = () => {
     const [text, setText] = useState('')
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
-    const [disabled, setDisabled] = useState(false) // состояние для блокировки кнопок
+    const [disabled, setDisabled] = useState(false)
 
     const send = (x?: boolean | null) => () => {
         const url =
@@ -25,21 +25,19 @@ const HW13 = () => {
         setImage('')
         setText('')
         setInfo('...loading')
-        setDisabled(true) // блокируем кнопки
+        setDisabled(true)
 
         axios
             .post(url, { success: x })
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
-                // дописываем обработку успешного ответа
                 setText(res.data.errorText || '')
                 setInfo(res.data.info || '')
             })
             .catch((e) => {
-                // дописываем обработку ошибок
                 if (e.response) {
-                    // сервер ответил с ошибкой
+                    // Сервер ответил с ошибкой
                     const status = e.response.status
                     if (status === 400) {
                         setCode('Ошибка 400!')
@@ -52,20 +50,19 @@ const HW13 = () => {
                         setText(e.response.data.errorText || '')
                         setInfo(e.response.data.info || '')
                     } else {
-                        // другая ошибка сервера
                         setCode(`Error ${status}!`)
                         setImage(errorUnknown)
-                        setText(e.response.data.errorText || e.message)
-                        setInfo(e.response.data.info || 'Unknown server error')
+                        setText(e.response.data?.errorText || e.message)
+                        setInfo(e.response.data?.info || 'Unknown server error')
                     }
                 } else if (e.request) {
-                    // запрос был сделан, но ответ не получен
-                    setCode('Network Error!')
+                    // Запрос был сделан, но ответ не получен (сетевая ошибка)
+                    setCode('Error!')
                     setImage(errorUnknown)
-                    setText(e.message || 'Network error')
-                    setInfo('Check your internet connection')
+                    setText('Network Error')
+                    setInfo('AxiosError')
                 } else {
-                    // что-то пошло не так при настройке запроса
+                    // Ошибка настройки запроса
                     setCode('Error!')
                     setImage(errorUnknown)
                     setText(e.message || 'Something went wrong')
@@ -73,7 +70,7 @@ const HW13 = () => {
                 }
             })
             .finally(() => {
-                setDisabled(false) // разблокируем кнопки в любом случае
+                setDisabled(false)
             })
     }
 
@@ -87,7 +84,7 @@ const HW13 = () => {
                         id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
-                        disabled={disabled} // дизейблим кнопку
+                        disabled={disabled}
                     >
                         Send true
                     </SuperButton>
@@ -95,7 +92,7 @@ const HW13 = () => {
                         id={'hw13-send-false'}
                         onClick={send(false)}
                         xType={'secondary'}
-                        disabled={disabled} // дизейблим кнопку
+                        disabled={disabled}
                     >
                         Send false
                     </SuperButton>
@@ -103,15 +100,15 @@ const HW13 = () => {
                         id={'hw13-send-undefined'}
                         onClick={send(undefined)}
                         xType={'secondary'}
-                        disabled={disabled} // дизейблим кнопку
+                        disabled={disabled}
                     >
                         Send undefined
                     </SuperButton>
                     <SuperButton
                         id={'hw13-send-null'}
-                        onClick={send(null)} // имитация запроса на не корректный адрес
+                        onClick={send(null)}
                         xType={'secondary'}
-                        disabled={disabled} // дизейблим кнопку
+                        disabled={disabled}
                     >
                         Send null
                     </SuperButton>
