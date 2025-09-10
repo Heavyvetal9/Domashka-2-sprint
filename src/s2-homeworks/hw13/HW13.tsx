@@ -53,7 +53,7 @@ const HW13 = () => {
                         setCode(`Error ${status}!`)
                         setImage(errorUnknown)
                         setText(e.response.data?.errorText || e.message)
-                        setInfo(e.response.data?.info || 'Unknown server error')
+                        setInfo(e.response.data?.info || 'Error')
                     }
                 } else if (e.request) {
                     // Запрос был сделан, но ответ не получен (сетевая ошибка)
